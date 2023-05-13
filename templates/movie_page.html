@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>{{ movie[1] }}</title>
+    <link rel="shortcut icon" type="image/png" href="../static/img/favicon2.png">
+
+    <link rel="stylesheet" href="../static/css/moviepage.css">
+</head>
+<body>
+    <div class="container">
+        <div class="poster">
+            <img src="{{movie.6}}" alt="">
+        </div>
+        <div class="info">
+            <div class="movie-title"><h3>{{ movie.1 }}</h3></div>
+            <div class="movie-detail">
+                <div class="set">
+                    <label>Release Year</label>
+                    <span>{{ movie.5 }}</span>
+                </div>
+                <div class="set">
+                    <label>Genre</label>
+                    <span>{{ movie.4 }}</span>
+                </div>
+            </div>
+            <div class="movie-description">
+                {{ movie.2 }}
+            </div>
+            <div class="middle">
+                <a class="btn" href="#divOne">Review</a>
+            </div>
+            <div class="overlay" id="divOne">
+                <div class="wrapper">
+                    <h2>Please leave your review here</h2>
+                    <a href="#" class="close">&times;</a>
+                    <div class="content">
+                        <div class="container2">
+                            <form>
+                                <label>write down below</label>
+                                <textarea placeholder="Your words here..."></textarea>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

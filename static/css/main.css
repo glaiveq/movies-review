@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+    --color-header: #f4efec;
+    --color-text: #cdc6c3;
+    --gallery-gap: calc(var(--index) * 7 )
+}
+
+@font-face {
+    font-family: raleway-c;
+    src: url(../fonts/raleway-regular.woff2);
+}
+
+@font-face {
+    font-family: outfit-c;
+    src: url(../fonts/outfit-regular.woff2);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: outfit-c;
+}
+
+.content, .hero, .main-header, .gallery > * {
+    will-change: transform;
+}
+
+body {
+    background-image: url(../img/bg.jpg);
+    background-size: 50px;
+    color: #fafafa;
+    font-family: raleway-c;
+    overflow-x: hidden;
+}
+
+.hero {
+    width: calc(var(--index) * 36);
+    position: absolute;
+    left: 37vw;
+    top: 22vh;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.main-header {
+    height: 100vh;
+}
+
+.container {
+    padding: 0 7vw;
+}
+
+.main-title {
+    font-size: calc(var(--index) * 8);
+    position: absolute;
+    width: min-content;
+    bottom: 12vh;
+    line-height: .9;
+}
+
+.gallery {
+    display: flex;
+    padding: calc(var(--index) * 8) 0;
+}
+
+.gallery > * {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gallery__item {
+    max-width: calc(var(--index) * 21);
+    margin-bottom: var(--gallery-gap);
+    max-height: 180vh;
+    border-radius: 8px;
+}
+
+.gallery__left {
+    margin-top: calc(var(--gallery-gap) * 1.75);
+}
+
+.gallery__right .gallery__item {
+    margin: 0;
+    margin-top: var(--gallery-gap) ;
+}
+
+.text-block {
+    color: var(--color-text);
+    position: relative;
+    max-width: calc(var(--index) * 22.5);
+    margin-left: calc(var(--index) * 2)
+}
+
+.text-block__h {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: var(--color-header);
+    margin-bottom: 1.5rem;
+}
+
+.text-block__p {
+    line-height: 1.75;
+}
+
+.glaiveq {
+    position: absolute;
+    bottom: 9vh;
+    margin-left: 62vh;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #cdc6c3;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation .btnLogin-popup {
+    position: relative;
+    top: 3.7vh;
+    right: 0;
+    width: 120px;
+    height: 35px;
+    margin-left: 78vw;
+    background: transparent;
+    border: 2px solid #cdc6c3;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #cdc6c3;
+    transition: .5s;
+    opacity: 80%;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #cdc6c3;
+    color: #162938;
+}
+
+.wrapper-2 {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    margin-left: calc(var(--index) * 23);
+    margin-top: calc(var(--index) * 7);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: height .2s ease-in-out;
+}
+
+.wrapper-2.active {
+    height: 520px;
+}
+
+.wrapper-2 .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper-2 .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper-2.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper-2 .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper-2.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #cdc6c3;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #cdc6c3;
+    margin: 30px 0;
+}
+
+.hero-login {
+    max-width: 100vh;
+    max-height: 100vh;
+    position: absolute;
+    left: 45vw;
+    top: 0;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #cdc6c3;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #cdc6c3;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #cdc6c3;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: #cdc6c3;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.remember-forgot label input {
+    accent-color: #cdc6c3;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #cdc6c3;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #cdc6c3;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 550;
+}
+
+.login-register {
+    font-size: .9em;
+    color: #cdc6c3;
+    text-align: center;
+    font-weight: 550;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: #cdc6c3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.nav {
+    position: absolute;
+    text-decoration: none;
+    margin-top: calc(var(--index) * 1.6);
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #cdc6c3;
+    margin-left: calc(var(--index) / 4);
+}
+.nav:after {
+    content: "";
+    position: absolute;
+    background-color: #cdc6c3;
+    height: 3px;
+    width: 0%;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+.nav:hover:after {
+    width: 100%;
+
+}
+
+
+
